@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/katherinesdd53/NYCProject#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "watson-developer-cloud": "^3.4.0"
   }
 }
