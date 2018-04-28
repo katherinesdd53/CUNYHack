@@ -44,10 +44,10 @@
     xhr.send();
     var parsed = JSON.parse(xhr.response);
     if(parsed.length>=1){
-        goo_map_url = JSON.stringify({"url":"https://maps.googleapis.com/maps/api/staticmap?center="+ parsed[0]['borough']+",&zoom=8&size=230x200&maptype=roadmap&markers=color:blue%7C"+parsed[0]['latitude']+","+parsed[0]['longitude'] + google_key});
+        goo_map_url = JSON.stringify({"url":"https://maps.googleapis.com/maps/api/staticmap?center="+ parsed[0]['borough']+",&zoom=10&size=230x200&maptype=roadmap&markers=color:blue%7C"+parsed[0]['latitude']+","+parsed[0]['longitude'] + google_key});
         // Api.setMapPayload(goo_map_url);
         Api.setMapPayload(goo_map_url);
-        console.log(goo_map_url);
+        //console.log(goo_map_url);
       }
     }else if(isBorough){
     input = input.charAt(0).toUpperCase() + input.substr(1);
@@ -59,10 +59,10 @@
     api_call.send();
     var borough_parsed = JSON.parse(api_call.response);
     if(borough_parsed.length>=1){
-        goo_map_url = JSON.stringify({"url":"https://maps.googleapis.com/maps/api/staticmap?center="+ borough_parsed[0]['borough']+",&zoom=8&size=230x200&maptype=roadmap&markers=color:green%7C"+borough_parsed[0]['latitude']+","+borough_parsed[0]['longitude'] + google_key});
+        goo_map_url = JSON.stringify({"url":"https://maps.googleapis.com/maps/api/staticmap?center="+ borough_parsed[0]['borough']+",&zoom=10&size=230x200&maptype=roadmap&markers=color:green%7C"+borough_parsed[0]['latitude']+","+borough_parsed[0]['longitude'] + google_key});
         // Api.setMapPayload(goo_map_url);
         Api.setMapPayload(goo_map_url);
-        console.log(goo_map_url);
+        //console.log(goo_map_url);
       }
     }
   };
