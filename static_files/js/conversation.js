@@ -170,7 +170,7 @@ var ConversationPanel = (function() {
     var messageArray = [];
 
     textArray.forEach(function(currentText) {
-      if (currentText == "Here's a Job Center Near You!"){
+      if (currentText == "Here's a Job Center Near You!" || currentText == "Here's the nearest shelter in your borough!"){
         var messageJson = {
           // <div class='segments'>
           'tagName': 'div',
