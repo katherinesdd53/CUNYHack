@@ -12,7 +12,15 @@ body {
 
 div {
   word-wrap: break-word;
-  line-height: 1.25rem;
+  line-height: 1.50rem;
+}
+p img {
+    border-radius: 8px;
+}
+
+.caption {
+    display: block;
+    margin-top: .5rem;
 }
 
 #view-change-button {
@@ -178,7 +186,7 @@ div {
 .from-watson.latest.top p:before {
   content: ".";
   color: #9855D4;
-  background-image: url("../img/marker_image.png");
+  background-image: url("../img/ibm-logo.png");
   background-size: 0.3125rem 1.3125rem;
   position: absolute;
   z-index: 2;

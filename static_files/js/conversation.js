@@ -29,6 +29,7 @@ var ConversationPanel = (function() {
     Api.sendRequest( '', null );
     setupInputBox();
   }
+  var check_map;
   // Set up callbacks on payload setters in Api module
   // This causes the displayMessage function to be called when messages are sent / received
   function chatUpdateSetup() {
@@ -42,6 +43,13 @@ var ConversationPanel = (function() {
     Api.setResponsePayload = function(newPayloadStr) {
       currentResponsePayloadSetter.call(Api, newPayloadStr);
       displayMessage(JSON.parse(newPayloadStr), settings.authorTypes.watson);
+    };
+
+    var currentMapPayloadSetter = Api.setMapPayload;
+    Api.setMapPayload = function(newMapLoad){
+      currentMapPayloadSetter.call(Api, newMapLoad);
+      check_map = JSON.parse(newMapLoad);
+      // displayMessage(check_map, settings.authorTypes.watson);
     };
   }
 
@@ -124,13 +132,13 @@ var ConversationPanel = (function() {
       var previousLatest = chatBoxElement.querySelectorAll((isUser
               ? settings.selectors.fromUser : settings.selectors.fromWatson)
               + settings.selectors.latest);
+
       // Previous "latest" message is no longer the most recent
       if (previousLatest) {
         Common.listForEach(previousLatest, function(element) {
           element.classList.remove('latest');
         });
       }
-
       messageDivs.forEach(function(currentDiv) {
         chatBoxElement.appendChild(currentDiv);
         // Class to start fade in animation
@@ -155,14 +163,37 @@ var ConversationPanel = (function() {
 
   // Constructs new DOM element from a message payload
   function buildMessageDomElements(newPayload, isUser) {
-    var textArray = isUser ? newPayload.input.text : newPayload.output.text;
+    var textArray = isUser ? newPayload.input.text : newPayload.output.text;    
     if (Object.prototype.toString.call( textArray ) !== '[object Array]') {
       textArray = [textArray];
     }
     var messageArray = [];
 
     textArray.forEach(function(currentText) {
-      if (currentText) {
+      if (currentText == "Here's a Job Center Near You!"){
+        var messageJson = {
+          // <div class='segments'>
+          'tagName': 'div',
+          'classNames': ['segments'],
+          'children': [{
+            // <div class='from-user/from-watson latest'>
+            'tagName': 'div',
+            'classNames': [(isUser ? 'from-user' : 'from-watson'), 'latest', ((messageArray.length === 0) ? 'top' : 'sub')],
+            'children': [{
+              // <div class='message-inner'>
+              'tagName': 'div',
+              'classNames': ['message-inner'],
+              'children': [{
+                // <p>{messageText}</p>
+                'tagName': 'p',
+                'text': currentText + "<span class='caption'><img src='"+check_map['url']+"'></span>"
+              }]
+            }]
+          }]
+        };
+        messageArray.push(Common.buildDomElement(messageJson));
+      }
+      else if(currentText){
         var messageJson = {
           // <div class='segments'>
           'tagName': 'div',
@@ -185,10 +216,15 @@ var ConversationPanel = (function() {
         };
         messageArray.push(Common.buildDomElement(messageJson));
       }
+      
     });
 
     return messageArray;
   }
+
+
+
+
 
   // Scroll to the bottom of the chat window (to the most recent messages)
   // Note: this method will bring the most recent user message into view,
