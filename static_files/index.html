@@ -4,24 +4,157 @@
   <title>Watson Assistant NYC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+
+  <link rel="icon" href="img/briefcase.png">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+
   <link rel="stylesheet" href="css/style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100" rel="stylesheet">
 </head>
-<body>
+<body data-spy="scroll" data-offset="30">
  <!--  <div id="view-change-button" class="button" onclick="PayloadPanel.togglePanel(event, this)">
     <img class="option full" src="../img/Chat Button.png">
     <img class="option not-full" src="../img/Code Button.png">
   </div> -->
-  <div id="contentParent" class="responsive-columns-wrapper">
-    <div id="chat-column-holder" class="responsive-column content-column">
-      <div class="chat-column">
-        <div id="scrollingChat"></div>
-        <label for="textInput" class="inputOutline">
-          <input id="textInput" class="input responsive-column"
-            placeholder="Ask watson for help" type="text"
-            onkeydown="ConversationPanel.inputKeyDown(event, this)">
-        </label>
+  <header class="bg-gradient" id="home">
+      <div class="container mt-5">
+          <h1>Watson's NYC</h1>
+          <p class="line-1 tagline">The long term financial solution for New Yorkers</p>
       </div>
-    </div>
+      <div class="img-holder mt-3"><img src="img/graphic.png" alt="phone" class="img-fluid"></div>
+  </header>
+
+  <div class="section light-bg" id="features">
+      <div class="container">
+          <div class="section-title">
+              <h2>Features</h2>
+          </div>
+          <div class="row">
+              <div class="col-12 col-lg-4">
+                  <div class="card features">
+                      <div class="card-body">
+                          <div class="media">
+                              <span class="ti-face-smile gradient-fill ti-3x mr-3"></span>
+                              <div class="media-body">
+                                  <h4 class="card-title">Simple</h4>
+                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                  <div class="card features">
+                      <div class="card-body">
+                          <div class="media">
+                              <span class="ti-settings gradient-fill ti-3x mr-3"></span>
+                              <div class="media-body">
+                                  <h4 class="card-title">Customize</h4>
+                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                  <div class="card features">
+                      <div class="card-body">
+                          <div class="media">
+                              <span class="ti-lock gradient-fill ti-3x mr-3"></span>
+                              <div class="media-body">
+                                  <h4 class="card-title">Secure</h4>
+                                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="section">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 offset-lg-6">
+                  <h2>Discover our App</h2>
+                  <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati vel exercitationem eveniet vero maxime ratione </p>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Launch Demo</button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body">
+
+                          <div id="contentParent" class="responsive-columns-wrapper">
+                            <div id="chat-column-holder" class="responsive-column content-column">
+                              <div class="chat-column">
+                                <div id="scrollingChat"></div>
+                                <label for="textInput" class="inputOutline">
+                                  <input id="textInput" class="input responsive-column" placeholder="Ask watson for help" type="text" onkeydown="ConversationPanel.inputKeyDown(event, this)">
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="perspective-phone">
+              <img src="img/perspective.png" alt="perspective phone" class="img-fluid">
+          </div>
+      </div>
+  </div>
+
+  <div class="section light-bg">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 d-flex align-items-center">
+                  <ul class="list-unstyled ui-steps">
+                      <li class="media">
+                          <div class="circle-icon mr-4">1</div>
+                          <div class="media-body">
+                              <h5>Create an Account</h5>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem </p>
+                          </div>
+                      </li>
+                      <li class="media my-4">
+                          <div class="circle-icon mr-4">2</div>
+                          <div class="media-body">
+                              <h5>Share with friends</h5>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem eveniet</p>
+                          </div>
+                      </li>
+                      <li class="media">
+                          <div class="circle-icon mr-4">3</div>
+                          <div class="media-body">
+                              <h5>Enjoy your life</h5>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium obcaecati vel exercitationem </p>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-md-4">
+                  <img src="img/iphonex.png" alt="iphone" class="img-fluid">
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <footer class="my-5 text-center">
+      <p class="mb-2">COPYRIGHT © 2018. ALL RIGHTS RESERVED.</p>
+  </footer>
    <!--  <div id="payload-column" class="fixed-column content-column">
       <div id="payload-initial-message">
         Type something to see the output
@@ -36,5 +169,8 @@
   <script src="js/conversation.js"></script>
   <script src="js/payload.js"></script>
   <script src="js/global.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
