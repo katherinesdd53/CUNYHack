@@ -163,7 +163,7 @@ var ConversationPanel = (function() {
 
   // Constructs new DOM element from a message payload
   function buildMessageDomElements(newPayload, isUser) {
-    var textArray = isUser ? newPayload.input.text : newPayload.output.text;    
+    var textArray = isUser ? newPayload.input.text : newPayload.output.text;
     if (Object.prototype.toString.call( textArray ) !== '[object Array]') {
       textArray = [textArray];
     }
@@ -186,9 +186,9 @@ var ConversationPanel = (function() {
               'children': [{
                 // <p>{messageText}</p>
                 'tagName': 'p',
-                'text': currentText + 
-"<div class='container'><img src='"+check_map['url']+"' class='image'> <div class='middle'><div class='text'><a href='"+check_map['address_link']+"' target='_blank'>View</a></div></div></div>"
-        
+                'text': currentText +
+"<div class='container-map'><img src='"+check_map['url']+"' class='image'> <div class='middle'><div class='text'><a href='"+check_map['address_link']+"' target='_blank'>View</a></div></div></div>"
+
               }]
             }]
           }]
@@ -218,7 +218,7 @@ var ConversationPanel = (function() {
         };
         messageArray.push(Common.buildDomElement(messageJson));
       }
-      
+
     });
     return messageArray;
   }
