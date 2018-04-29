@@ -18,9 +18,62 @@ p img {
     border-radius: 8px;
 }
 
-.caption {
-    display: block;
-    margin-top: .5rem;
+a {
+  text-decoration: none;
+  color:#41525e;
+}
+a:visited {
+  text-decoration: none;
+
+}
+a:hover {
+  color: #b6ddf9;
+}
+
+a:active {
+
+  color: #41525e;
+}
+
+.container {
+    position: relative;
+    margin-top: 5px;
+    width: 250px;
+    height: 200px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.6;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #f2faff;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
 }
 
 #view-change-button {

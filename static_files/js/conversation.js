@@ -186,7 +186,9 @@ var ConversationPanel = (function() {
               'children': [{
                 // <p>{messageText}</p>
                 'tagName': 'p',
-                'text': currentText + "<span class='caption'><img src='"+check_map['url']+"'></span>"
+                'text': currentText + 
+"<div class='container'><img src='"+check_map['url']+"' class='image'> <div class='middle'><div class='text'><a href='"+check_map['address_link']+"' target='_blank'>View</a></div></div></div>"
+        
               }]
             }]
           }]
@@ -218,7 +220,6 @@ var ConversationPanel = (function() {
       }
       
     });
-
     return messageArray;
   }
 
